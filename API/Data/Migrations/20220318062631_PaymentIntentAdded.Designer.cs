@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220318062631_PaymentIntentAdded")]
+    partial class PaymentIntentAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,9 +134,6 @@ namespace API.Data.Migrations
                     b.Property<long>("Price")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("PublicId")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("QuantityInStock")
                         .HasColumnType("INTEGER");
 
@@ -176,14 +175,14 @@ namespace API.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "d0586b4b-d817-449f-837c-73412ec70ec7",
+                            ConcurrencyStamp = "c271e99b-c036-4985-821e-d6870e8fcdf2",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "0b212137-04f6-4fa6-a8f6-ca7966696095",
+                            ConcurrencyStamp = "2233931b-0a4c-4ffd-99fe-d412183fef6e",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
